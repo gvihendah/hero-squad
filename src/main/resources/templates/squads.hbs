@@ -1,0 +1,32 @@
+{{#partial "content"}}
+<div class="row">
+  <div class="col fw-bold fs-3">All squads</div>
+  <div class="col fw-bold">
+    <div class="d-grid gap-2 d-md-flex m-2 justify-content-md-end">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#newSquadModal">
+        Register Squad
+      </button>
+    </div>
+  </div>
+</div>
+{{> new_squad.hbs}}
+<table class="table table-light table-hover">
+  <thead>
+  <tr>
+    <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#if squads}}
+  {{#each squads}}
+  <tr>
+    <td>
+      <a href="/squads/{{id}}">{{name}}</a>
+    </td>
+  </tr>
+  {{/each}}
+  {{/if}}
+  </tbody>
+</table>
+{{/partial}}
+{{> layout.hbs}}

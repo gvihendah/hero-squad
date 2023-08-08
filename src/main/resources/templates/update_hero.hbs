@@ -1,0 +1,19 @@
+{{#partial "formContent"}}
+<label for="name" class="form-label">Name</label>
+<input type="text" id="name" name="name" value="{{name}}" class="form-control" required>
+<label for="age" class="form-label">Age</label>
+<input type="number" id="age" name="age" value="{{age}}" class="form-control" required>
+<label for="special_power" class="form-label">Special Powers</label>
+<input type="text" id="special_power" name="special_power" value="{{specialPower}}" class="form-control" required>
+<label for="weakness" class="form-label">Weakness</label>
+<input type="text" id="weakness" name="weakness" value="{{weakness}}" class="form-control" required>
+<label for="squad_id">Affiliation</label>
+<select class="form-select" name="squad_id" id="squad_id" aria-label="squad_id">
+  {{#if squads}}
+  {{#each squads}}
+  <option value={{id}}>{{name}}</option>
+  {{/each}}
+  {{/if}}
+</select>
+{{/partial}}
+{{> hero_modal.hbs}}
