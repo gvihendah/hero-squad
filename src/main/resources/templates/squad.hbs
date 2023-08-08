@@ -1,0 +1,50 @@
+{{#partial "content"}}
+{{#with squad}}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <div class="card-text">
+            {{role}}
+        </div>
+        <div class="d-grid gap-2 d-md-flex mt-2 justify-content-md-end">
+            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#newSquadModal">
+                Update Squad
+            </button>
+
+            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#deleteSquadModal">
+                Remove Squad
+            </button>
+            {{> update_squad.hbs}}
+            {{> delete_squad.hbs}}
+        </div>
+    </div>
+</div>
+{{/with}}
+<table class="table table-light table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Powers</th>
+        <th>Weakness</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#if heroes}}
+    {{#each heroes}}
+    <tr>
+        <td>
+            <a href="/hero/{{id}}">{{name}}</a>
+        </td>
+        <td>{{specialPower}}</td>
+        <td>{{weakness}}</td>
+        <td>{{age}}</td>
+    </tr>
+    {{/each}}
+    {{/if}}
+    </tbody>
+</table>
+{{/partial}}
+{{> layout.hbs}}
