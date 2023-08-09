@@ -1,2 +1,3 @@
 rootProject.name = 'hero-squad'
+include('app')
 
