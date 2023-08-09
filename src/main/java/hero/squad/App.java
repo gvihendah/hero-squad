@@ -1,5 +1,6 @@
 package hero.squad;
 import static Spark.Spark.*;
+
 import hero.squad.dao.Sql2oSquadDAO;
 import hero.squad.models.Squad;
 import spark.ModelAndView;
@@ -7,6 +8,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import org.sql2o.Sql2o;
 import hero.squad.dao.Sql2oHeroDAO;
 import hero.squad.models.Hero;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
